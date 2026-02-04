@@ -4,9 +4,12 @@ from pprint import pprint
 def beolvasas(fajlnev):
     cipok = []
     with open(fajlnev, encoding="utf-8") as fajl:
-        sorok = fajl.readlines()[1]
-        for sor in sorok:
+        sorok = fajl.readlines()
+        i = 1  # 0. sor = fejléc
+        while i < len(sorok):
+            sor = sorok[i]
             adat = sor.strip().split(",")
+
             cipo = {
                 'title': adat[1],
                 'color': adat[4],
@@ -14,7 +17,9 @@ def beolvasas(fajlnev):
                 'current price': float(adat[6]),
                 'publish date': adat[9].split('T')[0]
             }
+
             cipok.append(cipo)
+            i += 1
     return cipok
 
 
