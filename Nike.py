@@ -5,7 +5,7 @@ def beolvasas(fajlnev):
     cipok = []
     with open(fajlnev, encoding="utf-8") as fajl:
         sorok = fajl.readlines()
-        i = 1  # 0. sor = fejléc
+        i = 1
         while i < len(sorok):
             sor = sorok[i]
             adat = sor.strip().split(",")
